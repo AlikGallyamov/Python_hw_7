@@ -6,8 +6,6 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 
-
-
 CURRENT_PATH = os.path.abspath(__file__)
 CURRENT_DIR = os.path.dirname(CURRENT_PATH)
 source_dir = os.path.join(CURRENT_DIR, "files")
