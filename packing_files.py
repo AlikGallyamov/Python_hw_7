@@ -16,4 +16,6 @@ def create_zip_files():
                          compression=zipfile.ZIP_DEFLATED) as zf:
         for file in files_name:
             add_file = os.path.join("files", file)
+            print(add_file)
             zf.write(add_file)
+
