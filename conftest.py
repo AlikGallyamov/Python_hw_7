@@ -10,8 +10,6 @@ CURRENT_DIR = os.path.dirname(CURRENT_PATH)
 
 @pytest.fixture()
 def download_pack_files():
-    os.mkdir(CURRENT_DIR + "/files")
-    os.mkdir(CURRENT_DIR + "/resource")
     download_file.download_csv()
     download_file.download_pdf()
     download_file.download_xlsx()
@@ -19,5 +17,5 @@ def download_pack_files():
 
     yield
 
-    os.rmdir(CURRENT_DIR + "/files")
-    os.rmdir(CURRENT_DIR + "/resource")
+    os.rmdir("files")
+    os.rmdir("resource")

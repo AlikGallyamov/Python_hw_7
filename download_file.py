@@ -19,7 +19,7 @@ browser.config.driver = driver
 
 
 def download_csv():
-    browser.open("https://github.com/AlikGallyamov/Python_hw_7/blob/main/files/exampleCSV.csv")
+    browser.open("https://github.com/AlikGallyamov/Python_hw_7/blob/main/original/exampleCSV.csv")
     download_url = browser.element("[data-testid='raw-button']").get(query.attribute("href"))
     content = requests.get(url=download_url).content
     with open(os.path.join(source_dir, "exampleCSV.csv"), 'wb') as file:
@@ -27,13 +27,13 @@ def download_csv():
 
 
 def download_pdf():
-    browser.open("https://github.com/AlikGallyamov/Python_hw_7/blob/main/files/examplePdf.pdf")
+    browser.open("https://github.com/AlikGallyamov/Python_hw_7/blob/main/original/examplePdf.pdf")
     browser.element("[data-testid=download-raw-button]").click()
     time.sleep(3)
 
 
 def download_xlsx():
-    browser.open("https://github.com/AlikGallyamov/Python_hw_7/blob/main/files/exampleXLSX.xlsx")
+    browser.open("https://github.com/AlikGallyamov/Python_hw_7/blob/main/original/exampleXLSX.xlsx")
     download_url = browser.element("[data-testid='raw-button']").get(query.attribute("href"))
     content = requests.get(url=download_url).content
     with open(os.path.join(source_dir, "exampleXLSX.xlsx"), 'wb') as file:
