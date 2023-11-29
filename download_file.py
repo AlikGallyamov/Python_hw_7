@@ -6,8 +6,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 
-os.mkdir("files")
-os.mkdir("resource")
+
 
 CURRENT_PATH = os.path.abspath(__file__)
 CURRENT_DIR = os.path.dirname(CURRENT_PATH)
@@ -36,7 +35,7 @@ def download_csv():
 def download_pdf():
     browser.open("https://github.com/AlikGallyamov/Python_hw_7/blob/main/original/examplePdf.pdf")
     browser.element("[data-testid=download-raw-button]").click()
-    time.sleep(3)
+    time.sleep(5)
 
 
 def download_xlsx():

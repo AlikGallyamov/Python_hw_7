@@ -10,6 +10,8 @@ CURRENT_DIR = os.path.dirname(CURRENT_PATH)
 
 @pytest.fixture()
 def download_pack_files():
+    os.mkdir("files")
+    os.mkdir("resource")
     download_file.download_csv()
     download_file.download_pdf()
     download_file.download_xlsx()
