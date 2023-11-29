@@ -13,7 +13,6 @@ CURRENT_PATH = os.path.abspath(__file__)
 CURRENT_DIR = os.path.dirname(CURRENT_PATH)
 source_dir = os.path.join(CURRENT_DIR, "files")
 resource_dir = os.path.join(CURRENT_DIR, "resource")
-files_name = os.listdir(source_dir)
 
 options = webdriver.ChromeOptions()
 prefs = {
@@ -34,7 +33,6 @@ def download_csv():
         file.write(content)
 
 
-
 def download_pdf():
     browser.open("https://github.com/AlikGallyamov/Python_hw_7/blob/main/original/examplePdf.pdf")
     browser.element("[data-testid=download-raw-button]").click()
@@ -49,14 +47,12 @@ def download_xlsx():
         file.write(content)
 
 
-
 def create_zip_files():
-
+    files_name = os.listdir(source_dir)
     with zipfile.ZipFile(resource_dir + '/test.zip', mode='w',
                          compression=zipfile.ZIP_DEFLATED) as zf:
         for file in files_name:
+            print(file)
             add_file = os.path.join("files", file)
             zf.write(add_file)
-
-
-
+    print("Я заархивировался")
