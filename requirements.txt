@@ -1,6 +1,7 @@
-selene>=2.0.0b4
+selene==2.0.0rc4
 pytest
 selenium~=4.15.2
 requests~=2.31.0
 pypdf
 openpyxl
+webdriver-manager==4.0.1
